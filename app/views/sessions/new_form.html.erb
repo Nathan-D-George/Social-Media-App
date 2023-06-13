@@ -1,0 +1,19 @@
+<h1 class='text-center mt-2 mb-2'>Log In <%= fa_icon 'user-circle-o' %></h1>
+
+<%= form_with model: @user, url: sign_in_path, local: true do |f|%>
+ <div class='d-flex justify-content-center align-items-center'>
+  <div class='col-md-6 mt-3 mb-3'>
+    <div class='mb-3'>
+      <%= f.label :username%>
+      <%= f.text_field :username, class: "form-control", placeholder:'john_doe'%>
+    </div>
+    <div class='mb-3'>
+      <%= f.label :password%>
+      <%= f.password_field :password, class: "form-control", placeholder:'password'%>
+    </div>
+    <div class='mb-3'>
+      <%= f.submit 'Log In', data:{turbo: false}, class:'btn btn-primary'%>
+    </div>    
+  </div>
+ </div>
+<%end%>
