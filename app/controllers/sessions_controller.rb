@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(info[:password])
       session[:user_id] = user.id
       set_current_user
-      debugger
+      #debugger
       flash[:notice] = "Log in Successful #{Current.user.username}"
       redirect_to root_path
     else

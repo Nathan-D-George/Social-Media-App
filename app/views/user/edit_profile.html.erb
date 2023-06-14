@@ -1,0 +1,36 @@
+<h1 class='text-center mt-2 mb-2'>Edit You Profile <%= @user.username%>' <%= fa_icon 'user-circle-o' %></h1>
+
+<%= form_with model: @user, url: update_profile_path, local: true do |f|%>
+ <div class='d-flex justify-content-center align-items-center'>
+  <div class='col-md-6 mt-3 mb-3'>
+    <div class='mb-3'>
+      <strong> <%= f.label :username%> </strong>
+      <%= f.text_field :username, class: "form-control", placeholder:'john_doe'%>
+    </div>
+    <div class='mb-3'>
+      <strong> <%= f.label :email%> </strong>
+      <%= f.text_field :email, class: "form-control", placeholder:'johndoe@gmail.com'%>
+    </div>
+    <% if Current.user.admin%>
+      <div class='mb-3'>
+        <strong><%= f.label :admin%></strong>
+      </div>
+      <div class='mb-3'>
+          <%= f.select(:admin, options_for_select([false, true], :selected => @user.admin))%>
+      </div>
+    <%end%>
+    <hr>
+    <div class='mb-3'>
+      <strong> <%= f.label :password%> </strong>
+      <%= f.password_field :password, class: "form-control", placeholder:'password'%>
+    </div>
+    <div class='mb-3'>
+      <strong> <%= f.label :password_confirmation%> </strong>
+      <%= f.password_field :password_confirmation, class: "form-control", placeholder:'password'%>
+    </div>
+    <div class='mb-3'>
+      <%= f.submit 'Update', data:{turbo_confirm: "Update Account?"}, class:'btn btn-primary'%>
+    </div>
+  </div>
+ </div>
+<%end%>

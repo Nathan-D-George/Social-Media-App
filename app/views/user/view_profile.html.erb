@@ -1,0 +1,29 @@
+<h1 class='text-center mt-2 mb-2'><%= @user.username%>'s Profile' <%= fa_icon 'user-circle-o' %></h1>
+
+<%= form_with model: @user, url: sign_up_path, local: true do |f|%>
+ <div class='d-flex justify-content-center align-items-center'>
+  <div class='col-md-6 mt-3 mb-3'>
+    <div class='mb-3'>
+      <strong><%= f.label :username%></strong>
+      <div class='container mt-2 mb-2 text-left'>
+        <%= @user.username%>
+      </div>
+    </div>
+    <div class='mb-3'>
+      <strong><%= f.label :email%></strong>
+      <div class='container mt-2 mb-2 text-left'>
+        <%= @user.email%>
+      </div>
+    </div>
+    <div class='mb-3'>
+      <strong><%= f.label :admin%></strong>
+      <div class='container mt-2 mb-2 text-left'>
+        <%= @user.admin%>
+      </div>
+    </div>
+    <%= link_to "Edit Profile", edit_profile_path, class:'btn btn-success'%>
+  </div>
+  
+ </div>
+ 
+<%end%>
