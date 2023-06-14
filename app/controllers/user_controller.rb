@@ -1,6 +1,7 @@
 class UserController < ApplicationController
   def view_profile
-    @user = User.find(Current.user.id)
+    @user = User.find(params[:user_id].to_i) # need users to view other users profiles actually
+    #debugger
   end
   
   def edit_profile
@@ -30,5 +31,8 @@ class UserController < ApplicationController
       render 'edit_profile'
     end
     #debugger
+  end
+  def users_list
+    @users = User.all
   end
 end

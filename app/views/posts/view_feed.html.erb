@@ -1,0 +1,33 @@
+<h1>Feed</h1>
+<div class='feed-page'>
+  <div class='feed-side'>
+    <div>
+      <%= link_to view_all_users_path do %>
+        <%= fa_icon 'users' %> Users
+      <%end%>
+    </div>
+  <div>
+  <%= link_to new_post_path do %>
+    <%= fa_icon 'plus-square-o' %> New Post
+  <%end%>
+  </div>
+  im in the side bar evener when om an extemetly long sentence asdasdasdasdasdasd asdsadasdsadasd
+  </div>
+
+  <div class='feed-main'>
+    <% @posts.each do |p| %>
+      <div class="card mb-4" style="width: 22.6rem; color: blue; background-color: grey">
+        <%= link_to image_tag(p.image.url, size:"360") %>
+        <div class="card-body">
+          <div>
+            <p class="card-text"><%= p.caption %></p>
+          </div>
+          <div>
+            <%= fa_icon 'chevron-right' %>
+            <%= @users.where(id: p.user_id).first.username %>
+          </div>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>

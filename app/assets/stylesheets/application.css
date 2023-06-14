@@ -14,6 +14,32 @@
  *= require_self
  *= require font-awesome
  */
- .syscol{
+.syscol{
     background-color: grey;
  }
+.image-upload > input {
+  display: none;
+}
+.upload-button {
+  padding: 10px;
+  font-size: 25px;
+}
+
+feed-page{
+    width: 1000px;
+    /*height: 650px;*/
+    
+}
+.feed-side{
+   padding-top: 30px;
+   width: 15%;
+   float: left;
+}
+.feed-main{
+   padding-top: 30px;
+   padding-left: 30px;
+   width: 85%;
+   height: 760px;
+   float: right;
+   overflow-y: scroll;
+}

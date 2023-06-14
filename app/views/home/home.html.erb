@@ -1,7 +1,13 @@
-<div>home page</div>
+<div><h1>Social App</div>
 <div>
    <%= link_to about_path, class:'btn btn-secondary' do%>
    <%= fa_icon 'info-circle' %> about
    <%end%>
-   
+   <div class='d-flex align-items-center justify-content-center'>
+      <%= image_tag "https://images.unsplash.com/photo-1608178398319-48f814d0750c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHVuaXZlcnNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"%>
+   </div>
+   <div class='d-flex align-items-center justify-content-center mt-4'>
+      <%= fa_icon 'users' %>
+      <%= fa_icon 'user-secret' %>
+   </div>
 </div>

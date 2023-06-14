@@ -18,9 +18,14 @@ Rails.application.routes.draw do
   get   '/view_profile',   to: 'user#view_profile'
   get   '/edit_profile',   to: 'user#edit_profile'
   patch '/update_profile', to: 'user#update_profile'
+  get   '/view_all_users', to: 'user#users_list'
+  
 
-  #get '/feed', to: 'social#feed'
-  #get '/dms',  to: 'social#dms'
+  get '/feed',     to: 'posts#view_feed'
+  get '/new_post', to: 'posts#new_post'
+  post'/add_post', to: 'posts#add_post'
+  
+  #get '/dms',  to: 'posts#dms'
 end
 
 
